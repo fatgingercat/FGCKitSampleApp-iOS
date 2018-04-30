@@ -16,26 +16,11 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios release_appstore
-```
-fastlane ios release_appstore
-```
-Release To AppStore
-### ios release_ipa
-```
-fastlane ios release_ipa
-```
-Release IPA and send on Slack
 ### ios release_pod
 ```
 fastlane ios release_pod
 ```
 Pod release
-### ios custom_lane
-```
-fastlane ios custom_lane
-```
-Description of what the lane does
 
 ----
 
