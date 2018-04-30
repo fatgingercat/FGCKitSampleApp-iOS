@@ -1,0 +1,16 @@
+PODS:
+  - FGCKit (1.0.0)
+
+DEPENDENCIES:
+  - FGCKit (from `/Users/danielbachar/Documents/FGCRepos/FGCKit/`)
+
+EXTERNAL SOURCES:
+  FGCKit:
+    :podspec: /Users/danielbachar/Documents/FGCRepos/FGCKit/
+
+SPEC CHECKSUMS:
+  FGCKit: 917665c58fab114e8d1a2cb415ed779cd7ca7425
+
+PODFILE CHECKSUM: c0bfa324bf95c2c4b5503eb1d4a282bf6228b147
+
+COCOAPODS: 1.4.0
