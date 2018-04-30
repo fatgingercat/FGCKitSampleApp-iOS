@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch
+        
+        // Please Note - only with a valid AppId And Key from FatGingerCat you will be able to work with the SDK
         FGCKit.start(withKey: "Key", appId: "AppId")
         return true
     }

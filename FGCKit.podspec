@@ -1,0 +1,16 @@
+Pod::Spec.new do |s|
+	s.name              = 'FGCKit'
+	s.version           = '1.0.5'
+	s.summary           = 'Awsome SDK for Manga consumption.'
+	s.homepage          = 'https://www.fatginger.cat'
+
+	s.author            = { 'Name' => 'support@fatginger.cat' }
+	s.license           = { :type => 'MIT', :file => 'LICENSE' }
+
+	s.platform          = :ios
+	s.source            = { :git => "https://github.com/tonymillion/Reachability.git" :tag => '1.0.0' }
+	# s.source            = { :http => "https://storage.googleapis.com/fgckit/FGCKit.framework.1.0.5.zip"}
+
+	s.ios.deployment_target = '9.0'
+	s.vendored_frameworks = 'FGCKit.framework'
+end

@@ -6,6 +6,6 @@ target 'FGCKitSampleApp' do
   use_frameworks!
 
   # Pods for FGCKitSampleApp
-  pod 'FGCKit', :podspec => '/Users/danielbachar/Documents/FGCRepos/FGCKit/'
+  pod 'FGCKit'
 
 end
