@@ -16,8 +16,26 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  desc "Pod release"
+  lane :release_pod do
+    # sh("podspec_generator.sh")
+    version_number = get_version_number(
+      xcodeproj: "FGCKitSampleApp.xcodeproj",
+      target: "FGCKitSampleApp"
+    )
+    # Extracting biuld number from relevant plist - this is due to multitarget project
+    build_number = get_info_plist_value(path: "./FGCKitSampleApp/Info.plist", key: "CFBundleVersion")
+    # inc current build number
+    build_number = build_number.to_i + 1
+    build_number = build_number.to_s
+    update_info_plist(
+      plist_path:"./FGCKitSampleApp/Info.plist",
+      block: lambda { |plist|  
+        plist["CFBundleVersion"] = build_number
+      }
+    )
+    version = version_number+"."+build_number
+    sh "python release_pod.py "+version+" "+Dir.pwd
   end
+
 end
