@@ -35,7 +35,7 @@ platform :ios do
       }
     )
     version = version_number+"."+build_number
-    sh "python release_pod.py "+version+" "+Dir.pwd
+    sh "python release_pod.py "+version
   end
 
 end

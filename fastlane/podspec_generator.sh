@@ -14,7 +14,7 @@ cat >../FGCKit.podspec <<EOL
 Pod::Spec.new do |s|
 	s.name              = 'FGCKit'
 	s.version           = '$version'
-	s.summary           = Awsome SDK for Manga consumption.'
+	s.summary           = 'Awsome SDK for Manga consumption.'
 	s.homepage          = 'https://www.fatginger.cat'
 
 	s.author            = { 'Name' => 'support@fatginger.cat' }
