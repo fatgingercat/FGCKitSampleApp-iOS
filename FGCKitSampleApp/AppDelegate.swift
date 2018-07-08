@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch
         
         // Please Note - only with a valid AppId And Key from FatGingerCat you will be able to work with the SDK
-//        FGCKit.start(withKey: "Key", appId: "AppId")
-        FGCKit.start(withKey: "AIzaSyBsyysd9tTW4_PCj2wG84KLhKPC86ab111", appId: "AppId")
+        FGCKit.start(withKey: "Key", appId: "AppId")
         return true
     }
 
