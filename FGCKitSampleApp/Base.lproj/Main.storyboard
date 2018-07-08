@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +40,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="209" height="194"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziW-rX-zVe">
-                                                    <rect key="frame" x="83" y="87" width="42" height="21"/>
+                                                    <rect key="frame" x="83" y="38" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-za-MTh">
+                                                    <rect key="frame" x="83" y="74" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -48,13 +55,16 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="UGE-uI-2BI" firstAttribute="leading" secondItem="EW9-0u-1MM" secondAttribute="leading" id="5gH-G7-ZdD"/>
+                                            <constraint firstItem="pDk-za-MTh" firstAttribute="top" secondItem="ziW-rX-zVe" secondAttribute="bottom" constant="15" id="6nD-4r-QWu"/>
                                             <constraint firstAttribute="bottom" secondItem="UGE-uI-2BI" secondAttribute="bottom" id="FHY-p2-GfD"/>
-                                            <constraint firstItem="ziW-rX-zVe" firstAttribute="centerY" secondItem="UGE-uI-2BI" secondAttribute="centerY" id="NEx-Dh-zGj"/>
+                                            <constraint firstItem="ziW-rX-zVe" firstAttribute="centerY" secondItem="UGE-uI-2BI" secondAttribute="centerY" multiplier="50:100" id="NEx-Dh-zGj"/>
                                             <constraint firstItem="ziW-rX-zVe" firstAttribute="centerX" secondItem="UGE-uI-2BI" secondAttribute="centerX" id="Zvo-MF-Nif"/>
+                                            <constraint firstItem="pDk-za-MTh" firstAttribute="centerX" secondItem="ziW-rX-zVe" secondAttribute="centerX" id="drv-Mj-Q7W"/>
                                             <constraint firstItem="UGE-uI-2BI" firstAttribute="top" secondItem="EW9-0u-1MM" secondAttribute="top" id="hxx-gt-e9H"/>
                                             <constraint firstAttribute="trailing" secondItem="UGE-uI-2BI" secondAttribute="trailing" id="qdf-V7-HKd"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="authorNameLabel" destination="pDk-za-MTh" id="7LS-pg-C4y"/>
                                             <outlet property="imageView" destination="UGE-uI-2BI" id="lfr-jE-CaS"/>
                                             <outlet property="titleLabel" destination="ziW-rX-zVe" id="sP2-Kz-Dfw"/>
                                         </connections>

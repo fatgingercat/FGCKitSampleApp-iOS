@@ -85,11 +85,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         //TODO - set image
         if let url = story.coverURL {
-            cell.imageView.imageFromURL(urlString: url)
+            cell.imageView.imageFromUrl(url)
         }
         
         //TODO - set Title
         cell.titleLabel.text = story.identifier
+        cell.authorNameLabel.text = story.authors?[0].firstName
         cell.titleLabel.textColor = .white
         return cell
     }

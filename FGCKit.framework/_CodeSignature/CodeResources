@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/FGCKit-Swift.h</key>
 		<data>
-		t94V4xqrOstoaGtxTSgP+w6hA7Q=
+		1kfu/IGzYqHJVhVlo9wueqc9v3Q=
 		</data>
 		<key>Headers/FGCKit.h</key>
 		<data>
@@ -18,23 +18,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Fzc7x4RHzFwgpc0GagG5kd9sItQ=
+		PFSn783hunU5I7R1f4ZUf1xRNGs=
 		</data>
 		<key>Modules/FGCKit.swiftmodule/arm.swiftdoc</key>
 		<data>
-		aJN5u0IFVU6xx92s87sG9Hdc0v0=
+		IetLoRcBree3t635DlNdvQi4hLU=
 		</data>
 		<key>Modules/FGCKit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		/uFXK+cYzPm2tsaX2txZkGYYRb8=
+		vxi96dnHfUYfWEuGInFh80uEVIk=
 		</data>
 		<key>Modules/FGCKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		4JH3pc7G41bl07v1uTuog7BBaIk=
+		pglLHxKshLFPfnU7NHybucS0G84=
 		</data>
 		<key>Modules/FGCKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		pq3a1sfr2vBLLU+HW+fcoQdrhlU=
+		bd/KeTH7bLmmmfaZ0Cxb/uPNJpY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,11 +55,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t94V4xqrOstoaGtxTSgP+w6hA7Q=
+			1kfu/IGzYqHJVhVlo9wueqc9v3Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			P/pLxer2y2ZzioyTHpsIpJjmZZXWGnTfjNDwX+F41VA=
+			uLKu0LOQ5xszB4IWDhK2dgyGZTttOPRLSJwHVH8XEGg=
 			</data>
 		</dict>
 		<key>Headers/FGCKit.h</key>
@@ -88,44 +88,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aJN5u0IFVU6xx92s87sG9Hdc0v0=
+			IetLoRcBree3t635DlNdvQi4hLU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Toki366lPkC88t0bsFinEwZ5Wfaej7HduA9uD5avHUQ=
+			1GrlzVSsPzrzlFJnDbppf5lqkvnJKt19WzvLoj8u1y8=
 			</data>
 		</dict>
 		<key>Modules/FGCKit.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/uFXK+cYzPm2tsaX2txZkGYYRb8=
+			vxi96dnHfUYfWEuGInFh80uEVIk=
 			</data>
 			<key>hash2</key>
 			<data>
-			U/LZzmU1joLOWM9VvcAEFYe09t53EL87zyv9Mw5QjIU=
+			ihjwn6pbhKbSlxChUMZp/9G+yNlFL0AuYy1Dh6wzMfc=
 			</data>
 		</dict>
 		<key>Modules/FGCKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4JH3pc7G41bl07v1uTuog7BBaIk=
+			pglLHxKshLFPfnU7NHybucS0G84=
 			</data>
 			<key>hash2</key>
 			<data>
-			ptLv42BHeh/BWb24qZR1k+0LcvAQ0G0QnvEEEwtjkgI=
+			zcmNUKCnAo9IJU0pjCDGAy+lxGEZv+e8ZXWdYFTBhIM=
 			</data>
 		</dict>
 		<key>Modules/FGCKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pq3a1sfr2vBLLU+HW+fcoQdrhlU=
+			bd/KeTH7bLmmmfaZ0Cxb/uPNJpY=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Mn5FmfphjT3bm77gEHOQP60q2tIriDAIAamIoBQE7Y=
+			9ZKcr6i2wSpg4UB1Eksuc1HP4y/AZlO2YpHBiQON8MI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

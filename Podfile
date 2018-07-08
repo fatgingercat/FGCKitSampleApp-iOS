@@ -6,6 +6,6 @@ target 'FGCKitSampleApp' do
   use_frameworks!
 
   # Pods for FGCKitSampleApp
-  pod 'FGCKit'
+  pod 'FGCKit', '~> 1.0.6'
 
 end
