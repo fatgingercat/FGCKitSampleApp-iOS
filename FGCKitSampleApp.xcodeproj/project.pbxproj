@@ -106,7 +106,6 @@
 				4F573E6A209738A1006A6096 /* Frameworks */,
 				4F573E6B209738A1006A6096 /* Resources */,
 				7608A11867E6EDA78622DA7F /* [CP] Embed Pods Frameworks */,
-				F79747150B989734986CC63A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,21 +197,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FGCKitSampleApp/Pods-FGCKitSampleApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F79747150B989734986CC63A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FGCKitSampleApp/Pods-FGCKitSampleApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
