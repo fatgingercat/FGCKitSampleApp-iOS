@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 	s.license           = { :type => 'MIT', :file => 'LICENSE' }
 
 	s.platform          = :ios
-	s.source            = { :http => "https://github.com/fatgingercat/FGCKitSampleApp-iOS.git" :tag => '$version' }
+	s.source            = { :git => "https://github.com/fatgingercat/FGCKitSampleApp-iOS.git", :tag => '$version' }
 
 	s.ios.deployment_target = '10.0'
 	s.vendored_frameworks = 'FGCKit.framework'
