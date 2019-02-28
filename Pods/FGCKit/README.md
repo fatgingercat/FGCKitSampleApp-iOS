@@ -28,12 +28,12 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'FGCKit', '~> 1.0.15'
+    pod 'FGCKit', '~> 1.0.7'
 end
 ```
 
 Then, run the following command:
 
 ```bash
-$ pod install --repo-update
+$ pod install
 ```

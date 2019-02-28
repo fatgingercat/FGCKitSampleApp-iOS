@@ -27,11 +27,11 @@ call(["git", "push", "origin", version])
 # Lets hope 600 (10 min) on avarage is enough (:
 time.sleep(60)
 # Publishing pod - hack need to pass current folder as well
-command = "cd .. && pod trunk push FGCKit.podspec --allow-warnings"
+command = "cd .. && pod trunk push FGCKit.podspec --allow-warnings --verbose"
 print("Runing Command - ", command)
 process = subprocess.Popen(command,shell=True, stdout=subprocess.PIPE)
 for line in process.stdout:
-    print line
+    print(line)
 status = process.wait()
 # TODO error handling
 if status is not 0:
