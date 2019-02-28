@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name              = 'FGCKit'
-	s.version           = '1.0.10'
+	s.version           = '1.0.11'
 	s.summary           = 'Awsome SDK for Manga consumption.'
 	s.homepage          = 'https://www.fatginger.cat'
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 	s.license           = { :type => 'MIT', :file => 'LICENSE' }
 
 	s.platform          = :ios
-	s.source            = { :http => "https://github.com/fatgingercat/FGCKitSampleApp.git" :tag => '1.0.10' }
+	s.source            = { :http => "https://github.com/fatgingercat/FGCKitSampleApp.git" :tag => '1.0.11' }
 
 	s.ios.deployment_target = '10.0'
 	s.vendored_frameworks = 'FGCKit.framework'
