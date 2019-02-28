@@ -25,7 +25,7 @@ call(["git", "tag", version])
 call(["git", "push", "origin", version])
 # Hack - Bitbucket sucks - take time after tagging until we can actually use the zip/tar file created
 # Lets hope 600 (10 min) on avarage is enough (:
-# time.sleep(600)
+time.sleep(60)
 # Publishing pod - hack need to pass current folder as well
 command = "cd .. && pod trunk push FGCKit.podspec --allow-warnings"
 print("Runing Command - ", command)

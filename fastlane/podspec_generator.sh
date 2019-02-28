@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 	s.platform          = :ios
 	s.source            = { :http => "https://github.com/fatgingercat/FGCKitSampleApp.git" :tag => '$version' }
 
-	s.ios.deployment_target = '9.0'
+	s.ios.deployment_target = '10.0'
 	s.vendored_frameworks = 'FGCKit.framework'
 end
 EOL
