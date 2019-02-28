@@ -28,7 +28,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'FGCKit', '~> 1.0.6'
+    pod 'FGCKit', '~> 1.0.7'
 end
 ```
 
