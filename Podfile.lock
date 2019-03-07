@@ -1,16 +1,16 @@
 PODS:
-  - FGCKit (1.0.15)
+  - FGCKit (1.0.17)
 
 DEPENDENCIES:
-  - FGCKit (~> 1.0.15)
+  - FGCKit (~> 1.0.17)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FGCKit
 
 SPEC CHECKSUMS:
-  FGCKit: 1dd8b9ad16491be4f82388eb74e409dd2a6a54d4
+  FGCKit: cc9321872bc588fa472b49cbb6c68d9fc8388c75
 
-PODFILE CHECKSUM: aed9308c56471d9ef84b01314e7c68b62c378f0d
+PODFILE CHECKSUM: 256d00ab5215d190206ab8feb7730fef07acd2c4
 
 COCOAPODS: 1.5.3

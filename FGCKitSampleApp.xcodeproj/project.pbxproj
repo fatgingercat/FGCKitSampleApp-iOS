@@ -128,6 +128,7 @@
 				TargetAttributes = {
 					4F573E6C209738A1006A6096 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -354,6 +355,7 @@
 			baseConfigurationReference = 2D8F1E6D75F6DE395CED9385 /* Pods-FGCKitSampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PGUSK97GU;
 				INFOPLIST_FILE = FGCKitSampleApp/Info.plist;
@@ -364,7 +366,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cat.fatginger.FGCKitSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -374,6 +377,7 @@
 			baseConfigurationReference = D732C9ECB33E6775D92390F8 /* Pods-FGCKitSampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PGUSK97GU;
 				INFOPLIST_FILE = FGCKitSampleApp/Info.plist;
@@ -384,7 +388,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cat.fatginger.FGCKitSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
