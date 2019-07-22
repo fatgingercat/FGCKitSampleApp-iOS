@@ -90,7 +90,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         //TODO - set Title
         cell.titleLabel.text = story.identifier
-        cell.authorNameLabel.text = story.authors?[0].firstName
+//        FGCKit.user
+        cell.authorNameLabel.text = story.owners[0].firstName
         cell.titleLabel.textColor = .white
         return cell
     }
