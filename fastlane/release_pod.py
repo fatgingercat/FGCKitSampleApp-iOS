@@ -29,7 +29,7 @@ time.sleep(100)
 # Publishing pod - hack need to pass current folder as well
 command = "pod trunk push FGCKit.podspec --allow-warnings --verbose"
 print("Runing Command - ", command)
-process = subprocess.Popen(command,shell=True, stdout=subprocess.PIPE)
+process = subprocess.Popen(command,shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 for line in process.stdout:
     print(line)
 status = process.wait()
