@@ -40,9 +40,9 @@
 		35E7FEEA00EA9421DBD238E067A00D00 /* Pods-FGCKitSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FGCKitSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		4D11EFEDD451423D013EFC08102E085B /* Pods-FGCKitSampleApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FGCKitSampleApp-dummy.m"; sourceTree = "<group>"; };
 		5E207F5632C7E7455B08B186C091154A /* FGCKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FGCKit.xcconfig; sourceTree = "<group>"; };
-		63D96B2003920BBECD1EF55DBC2CBBD4 /* FGCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FGCKit.framework; path = ../../../FGCKit/Build/Intermediates/ArchiveIntermediates/ExampleApp/IntermediateBuildFilesPath/UninstalledProducts/iphoneos/FGCKit.framework; sourceTree = "<group>"; };
 		790A234811D2ADEA3A0FB598FF25BD90 /* Pods-FGCKitSampleApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FGCKitSampleApp-frameworks.sh"; sourceTree = "<group>"; };
 		81D2D7B985E65AF7212B6272F2A6709A /* Pods_FGCKitSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FGCKitSampleApp.framework; path = "Pods-FGCKitSampleApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		922C4E9E543DCEAD6F27C025D71ADF4A /* FGCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FGCKit.framework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DAAC73FB8D7FE704AB2EFB74A4EB005 /* Pods-FGCKitSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FGCKitSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2AE10FB53655EB1D4B3303F139CD46 /* Pods-FGCKitSampleApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FGCKitSampleApp-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -80,14 +80,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		7E1FC38D92C1D868D23A1F7521682288 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				63D96B2003920BBECD1EF55DBC2CBBD4 /* FGCKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +91,7 @@
 		AD0C6F2C6ABF121B08BE460159AEC98C /* FGCKit */ = {
 			isa = PBXGroup;
 			children = (
-				7E1FC38D92C1D868D23A1F7521682288 /* Frameworks */,
+				C36D78D61015265B56115F41E93393E3 /* Frameworks */,
 				674A6173D62DD95B786C8DB54E1B65FB /* Support Files */,
 			);
 			name = FGCKit;
@@ -137,6 +129,14 @@
 				B12988D784245DEE15504D6E27394E46 /* Pods-FGCKitSampleApp */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C36D78D61015265B56115F41E93393E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				922C4E9E543DCEAD6F27C025D71ADF4A /* FGCKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
