@@ -4,9 +4,9 @@ Sample App usig FGCKit pod
 
 ## Requirements
 
-- iOS 9.0+
-- Xcode 8.3+
-- Swift 3.1+
+- iOS 12.0+
+- Xcode 11.3+
+- Swift 4.2+
 
 ## Installation
 
@@ -28,7 +28,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'FGCKit', '~> 1.0.15'
+    pod 'FGCKit'
 end
 ```
 
