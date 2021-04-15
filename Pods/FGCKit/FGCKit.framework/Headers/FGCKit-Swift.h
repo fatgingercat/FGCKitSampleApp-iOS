@@ -192,10 +192,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS_NAMED("Author")
 @interface FGCAuthor : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull identifier;
-@property (nonatomic, readonly, copy) NSString * _Nullable firstName;
-@property (nonatomic, readonly, copy) NSString * _Nullable lastName;
-@property (nonatomic, readonly, copy) NSString * _Nullable email;
-@property (nonatomic, readonly, copy) NSString * _Nullable phone;
+@property (nonatomic, copy) NSString * _Nullable firstName;
+@property (nonatomic, copy) NSString * _Nullable lastName;
+@property (nonatomic, copy) NSString * _Nullable email;
+@property (nonatomic, copy) NSString * _Nullable phone;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -215,6 +215,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FGCUser * _N
 @end
 
 
+
+
+SWIFT_CLASS("_TtC6FGCKit9PayOption")
+@interface PayOption : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, PaymentStatus, closed) {
+  PaymentStatusFree = 0,
+  PaymentStatusPaid = 1,
+};
 
 @class NSCoder;
 @class NSBundle;
@@ -302,6 +314,42 @@ SWIFT_CLASS("_TtC6FGCKit15SessionDelegate")
 - (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes;
 @end
 
+@class NSURLSessionStreamTask;
+@class NSInputStream;
+@class NSOutputStream;
+
+SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=9.0)
+@interface SessionDelegate (SWIFT_EXTENSION(FGCKit)) <NSURLSessionStreamDelegate>
+/// Tells the delegate that the read side of the connection has been closed.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session readClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the write side of the connection has been closed.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session writeClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the system has determined that a better route to the host is available.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session betterRouteDiscoveredForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the stream task has been completed and provides the unopened stream objects.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+/// \param inputStream The new input stream.
+///
+/// \param outputStream The new output stream.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session streamTask:(NSURLSessionStreamTask * _Nonnull)streamTask didBecomeInputStream:(NSInputStream * _Nonnull)inputStream outputStream:(NSOutputStream * _Nonnull)outputStream;
+@end
+
 @class NSURLAuthenticationChallenge;
 @class NSURLCredential;
 
@@ -378,42 +426,6 @@ SWIFT_CLASS("_TtC6FGCKit15SessionDelegate")
 - (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask willCacheResponse:(NSCachedURLResponse * _Nonnull)proposedResponse completionHandler:(void (^ _Nonnull)(NSCachedURLResponse * _Nullable))completionHandler;
 @end
 
-@class NSURLSessionStreamTask;
-@class NSInputStream;
-@class NSOutputStream;
-
-SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=9.0)
-@interface SessionDelegate (SWIFT_EXTENSION(FGCKit)) <NSURLSessionStreamDelegate>
-/// Tells the delegate that the read side of the connection has been closed.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session readClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the write side of the connection has been closed.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session writeClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the system has determined that a better route to the host is available.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session betterRouteDiscoveredForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the stream task has been completed and provides the unopened stream objects.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-/// \param inputStream The new input stream.
-///
-/// \param outputStream The new output stream.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session streamTask:(NSURLSessionStreamTask * _Nonnull)streamTask didBecomeInputStream:(NSInputStream * _Nonnull)inputStream outputStream:(NSOutputStream * _Nonnull)outputStream;
-@end
-
 @class NSURLSessionTask;
 @class NSHTTPURLResponse;
 @class NSURLSessionTaskMetrics;
@@ -482,31 +494,26 @@ SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.1
 - (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
 @end
 
-@class PayOption;
 
 SWIFT_CLASS_NAMED("Story")
 @interface FGCStory : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull identifier;
-@property (nonatomic, readonly, copy) NSString * _Nullable name;
-@property (nonatomic, readonly, copy) NSString * _Nullable storyDescription;
-@property (nonatomic, readonly, copy) NSString * _Nullable coverURL;
-@property (nonatomic, readonly, copy) NSArray<FGCAuthor *> * _Nonnull owners;
-@property (nonatomic, readonly, copy) NSString * _Nullable authorName;
-@property (nonatomic, readonly, copy) NSString * _Nullable illustratorName;
-@property (nonatomic, readonly, copy) NSString * _Nullable narrtor;
-@property (nonatomic, readonly, copy) NSString * _Nullable publisher;
-@property (nonatomic, readonly, copy) NSString * _Nullable fontName;
-@property (nonatomic, readonly, copy) NSString * _Nullable targetAge;
-@property (nonatomic, readonly, copy) NSDate * _Nullable registrationDate;
-@property (nonatomic, readonly, copy) NSDate * _Nullable updateDate;
-@property (nonatomic, readonly, strong) PayOption * _Nullable payingOption;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSString * _Nullable storyDescription;
+@property (nonatomic, copy) NSString * _Nullable coverURL;
+@property (nonatomic, copy) NSArray<FGCAuthor *> * _Nonnull owners;
 @property (nonatomic, readonly, copy) NSURL * _Nullable url;
+@property (nonatomic, copy) NSString * _Nullable authorName;
+@property (nonatomic, copy) NSString * _Nullable illustratorName;
+@property (nonatomic, copy) NSString * _Nullable narrtor;
+@property (nonatomic, copy) NSString * _Nullable publisher;
+@property (nonatomic, copy) NSString * _Nullable fontName;
+@property (nonatomic, copy) NSString * _Nullable targetAge;
+@property (nonatomic, copy) NSDate * _Nullable registrationDate;
+@property (nonatomic, copy) NSDate * _Nullable updateDate;
+@property (nonatomic, strong) PayOption * _Nullable payingOption;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-@interface FGCStory (SWIFT_EXTENSION(FGCKit))
 @end
 
 
@@ -526,25 +533,13 @@ SWIFT_CLASS("_TtC6FGCKit12TaskDelegate")
 
 
 
-enum PaymentStatus : NSInteger;
 
 SWIFT_CLASS_NAMED("User")
 @interface FGCUser : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull identifier;
-@property (nonatomic, readonly, copy) NSString * _Nullable deviceId;
-@property (nonatomic, readonly) enum PaymentStatus payment;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
-@interface FGCUser (SWIFT_EXTENSION(FGCKit))
-@end
-
-typedef SWIFT_ENUM(NSInteger, PaymentStatus, closed) {
-  PaymentStatusFree = 0,
-  PaymentStatusPaid = 1,
-};
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -744,10 +739,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS_NAMED("Author")
 @interface FGCAuthor : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull identifier;
-@property (nonatomic, readonly, copy) NSString * _Nullable firstName;
-@property (nonatomic, readonly, copy) NSString * _Nullable lastName;
-@property (nonatomic, readonly, copy) NSString * _Nullable email;
-@property (nonatomic, readonly, copy) NSString * _Nullable phone;
+@property (nonatomic, copy) NSString * _Nullable firstName;
+@property (nonatomic, copy) NSString * _Nullable lastName;
+@property (nonatomic, copy) NSString * _Nullable email;
+@property (nonatomic, copy) NSString * _Nullable phone;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -767,6 +762,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FGCUser * _N
 @end
 
 
+
+
+SWIFT_CLASS("_TtC6FGCKit9PayOption")
+@interface PayOption : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, PaymentStatus, closed) {
+  PaymentStatusFree = 0,
+  PaymentStatusPaid = 1,
+};
 
 @class NSCoder;
 @class NSBundle;
@@ -854,6 +861,42 @@ SWIFT_CLASS("_TtC6FGCKit15SessionDelegate")
 - (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes;
 @end
 
+@class NSURLSessionStreamTask;
+@class NSInputStream;
+@class NSOutputStream;
+
+SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=9.0)
+@interface SessionDelegate (SWIFT_EXTENSION(FGCKit)) <NSURLSessionStreamDelegate>
+/// Tells the delegate that the read side of the connection has been closed.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session readClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the write side of the connection has been closed.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session writeClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the system has determined that a better route to the host is available.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session betterRouteDiscoveredForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
+/// Tells the delegate that the stream task has been completed and provides the unopened stream objects.
+/// \param session The session.
+///
+/// \param streamTask The stream task.
+///
+/// \param inputStream The new input stream.
+///
+/// \param outputStream The new output stream.
+///
+- (void)URLSession:(NSURLSession * _Nonnull)session streamTask:(NSURLSessionStreamTask * _Nonnull)streamTask didBecomeInputStream:(NSInputStream * _Nonnull)inputStream outputStream:(NSOutputStream * _Nonnull)outputStream;
+@end
+
 @class NSURLAuthenticationChallenge;
 @class NSURLCredential;
 
@@ -930,42 +973,6 @@ SWIFT_CLASS("_TtC6FGCKit15SessionDelegate")
 - (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask willCacheResponse:(NSCachedURLResponse * _Nonnull)proposedResponse completionHandler:(void (^ _Nonnull)(NSCachedURLResponse * _Nullable))completionHandler;
 @end
 
-@class NSURLSessionStreamTask;
-@class NSInputStream;
-@class NSOutputStream;
-
-SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=9.0)
-@interface SessionDelegate (SWIFT_EXTENSION(FGCKit)) <NSURLSessionStreamDelegate>
-/// Tells the delegate that the read side of the connection has been closed.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session readClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the write side of the connection has been closed.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session writeClosedForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the system has determined that a better route to the host is available.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session betterRouteDiscoveredForStreamTask:(NSURLSessionStreamTask * _Nonnull)streamTask;
-/// Tells the delegate that the stream task has been completed and provides the unopened stream objects.
-/// \param session The session.
-///
-/// \param streamTask The stream task.
-///
-/// \param inputStream The new input stream.
-///
-/// \param outputStream The new output stream.
-///
-- (void)URLSession:(NSURLSession * _Nonnull)session streamTask:(NSURLSessionStreamTask * _Nonnull)streamTask didBecomeInputStream:(NSInputStream * _Nonnull)inputStream outputStream:(NSOutputStream * _Nonnull)outputStream;
-@end
-
 @class NSURLSessionTask;
 @class NSHTTPURLResponse;
 @class NSURLSessionTaskMetrics;
@@ -1034,31 +1041,26 @@ SWIFT_AVAILABILITY(tvos,introduced=9.0) SWIFT_AVAILABILITY(macos,introduced=10.1
 - (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
 @end
 
-@class PayOption;
 
 SWIFT_CLASS_NAMED("Story")
 @interface FGCStory : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull identifier;
-@property (nonatomic, readonly, copy) NSString * _Nullable name;
-@property (nonatomic, readonly, copy) NSString * _Nullable storyDescription;
-@property (nonatomic, readonly, copy) NSString * _Nullable coverURL;
-@property (nonatomic, readonly, copy) NSArray<FGCAuthor *> * _Nonnull owners;
-@property (nonatomic, readonly, copy) NSString * _Nullable authorName;
-@property (nonatomic, readonly, copy) NSString * _Nullable illustratorName;
-@property (nonatomic, readonly, copy) NSString * _Nullable narrtor;
-@property (nonatomic, readonly, copy) NSString * _Nullable publisher;
-@property (nonatomic, readonly, copy) NSString * _Nullable fontName;
-@property (nonatomic, readonly, copy) NSString * _Nullable targetAge;
-@property (nonatomic, readonly, copy) NSDate * _Nullable registrationDate;
-@property (nonatomic, readonly, copy) NSDate * _Nullable updateDate;
-@property (nonatomic, readonly, strong) PayOption * _Nullable payingOption;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSString * _Nullable storyDescription;
+@property (nonatomic, copy) NSString * _Nullable coverURL;
+@property (nonatomic, copy) NSArray<FGCAuthor *> * _Nonnull owners;
 @property (nonatomic, readonly, copy) NSURL * _Nullable url;
+@property (nonatomic, copy) NSString * _Nullable authorName;
+@property (nonatomic, copy) NSString * _Nullable illustratorName;
+@property (nonatomic, copy) NSString * _Nullable narrtor;
+@property (nonatomic, copy) NSString * _Nullable publisher;
+@property (nonatomic, copy) NSString * _Nullable fontName;
+@property (nonatomic, copy) NSString * _Nullable targetAge;
+@property (nonatomic, copy) NSDate * _Nullable registrationDate;
+@property (nonatomic, copy) NSDate * _Nullable updateDate;
+@property (nonatomic, strong) PayOption * _Nullable payingOption;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-@interface FGCStory (SWIFT_EXTENSION(FGCKit))
 @end
 
 
@@ -1078,25 +1080,13 @@ SWIFT_CLASS("_TtC6FGCKit12TaskDelegate")
 
 
 
-enum PaymentStatus : NSInteger;
 
 SWIFT_CLASS_NAMED("User")
 @interface FGCUser : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull identifier;
-@property (nonatomic, readonly, copy) NSString * _Nullable deviceId;
-@property (nonatomic, readonly) enum PaymentStatus payment;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
-@interface FGCUser (SWIFT_EXTENSION(FGCKit))
-@end
-
-typedef SWIFT_ENUM(NSInteger, PaymentStatus, closed) {
-  PaymentStatusFree = 0,
-  PaymentStatusPaid = 1,
-};
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

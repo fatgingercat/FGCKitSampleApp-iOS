@@ -5,6 +5,12 @@ import subprocess
 import time
 
 
+# TODO - build XCFramework
+# xcodebuild -create-xcframework \
+# -framework ./XIBLoadable-iOS.xcarchive/Products/Library/Frameworks/XIBLoadable_iOS.framework \
+# -framework ./XIBLoadable-Sim.xcarchive/Products/Library/Frameworks/XIBLoadable_iOS.framework \
+# -output ./XIBLoadable.xcframework
+
 # Parsing args
 # 1 - version
 
