@@ -252,6 +252,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0F1F365DD616B9C3D23A5AB082F85D33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F3BE26FAB3F9EEBD68E888663573CF1 /* FGCKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		144E912F86E53B03DBE8939C21F3FADA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DAAC73FB8D7FE704AB2EFB74A4EB005 /* Pods-FGCKitSampleApp.debug.xcconfig */;
@@ -455,32 +473,14 @@
 			};
 			name = Release;
 		};
-		92FA7A649E32A7835783D05FC8BD3734 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F3BE26FAB3F9EEBD68E888663573CF1 /* FGCKit.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B2AC957A13FE07F90AF35787D0BC4661 /* Debug */ = {
+		83E9DC909DE40769C28236363D414B90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5AB05B7C5BC55DD098819A6CF916448 /* FGCKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,8 +514,8 @@
 		E2C2EAC374D72D2EA4E5D63E76A9A965 /* Build configuration list for PBXAggregateTarget "FGCKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B2AC957A13FE07F90AF35787D0BC4661 /* Debug */,
-				92FA7A649E32A7835783D05FC8BD3734 /* Release */,
+				83E9DC909DE40769C28236363D414B90 /* Debug */,
+				0F1F365DD616B9C3D23A5AB082F85D33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
